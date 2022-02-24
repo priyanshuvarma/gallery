@@ -1,0 +1,19 @@
+/* Write your code here. */
+.list-item {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.unselected-btn {
+  background-color: #ffffff;
+  border: none;
+  opacity: 0.5;
+  border: none;
+  padding: 0px;
+}
+.active-btn {
+  opacity: 1;
+}
+.thumbnail-btn {
+  border: none;
+  background: transparent;
+}
