@@ -1,29 +1,25 @@
-// Write your code here.
 import './index.css'
 
 const ThumbnailItem = props => {
-  const {imageDetails, updateImage, isActive} = props
-  const {id, thumbnailUrl, thumbnailAltText} = imageDetails
+  const {imageDetails, isActive, setActiveThumbnailId} = props
+  const {thumbnailUrl, thumbnailAltText, id} = imageDetails
+  const thumbnailClassName = isActive ? `thumbnail active` : `thumbnail`
 
   const onClickThumbnail = () => {
-    updateImage(id)
+    setActiveThumbnailId(id)
   }
 
-  const selectedThumbnailClass = isActive
-    ? 'active-btn unselected-btn'
-    : 'unselected-btn'
-
   return (
-    <li className="list-item">
+    <li className="thumbnail-list-item">
       <button
         type="button"
-        className="thumbnail-btn"
+        className="thumbnail-button"
         onClick={onClickThumbnail}
       >
         <img
-          alt={thumbnailAltText}
-          className={selectedThumbnailClass}
           src={thumbnailUrl}
+          alt={thumbnailAltText}
+          className={thumbnailClassName}
         />
       </button>
     </li>
